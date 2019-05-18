@@ -1,4 +1,7 @@
 .LandingPage {
   position: relative;
   margin: 0 17%;
+  &__search {
+    margin-bottom: 2rem;
+  }
 }
