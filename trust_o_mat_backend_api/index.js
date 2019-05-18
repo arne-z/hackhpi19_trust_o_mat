@@ -1,11 +1,14 @@
 const routes = require("./routes");
 const Mongo = require('./db');
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 const port = 3000;
 
 const db = new Mongo("mongodb://172.16.49.43:27017");
 db.init().then(() => console.log("Deutsche Bahn initialized"));
+
+app.use(morgan('short'));
 
 app.get("/issues", routes.issues.listIssues.bind(undefined, db));
 app.get('/parties', routes.parties.listParties.bind(undefined, db));
