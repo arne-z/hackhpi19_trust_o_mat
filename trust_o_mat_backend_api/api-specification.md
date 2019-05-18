@@ -56,7 +56,7 @@ JSON with metric value, eg. `{"value": 84}`
 
 #### Politicians
 
-Exactly like parties, but the routes begin with `/politicians`
+Exactly like [parties](#Parties), but the routes begin with `/politicians`
 
 ---
 
@@ -81,4 +81,4 @@ JSON list of stances
 
 #### Votes
 
-Exactly like stances, but the routes begin with `/votes'
+Exactly like [stances](#Stances), but the routes begin with `/votes'
