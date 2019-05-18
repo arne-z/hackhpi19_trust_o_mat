@@ -1,26 +1,26 @@
 const routes = require(".");
 const {parseQueryParam} = require('./utilities');
 
-function listParties(req, res) {
+function listPoliticians(req, res) {
     const amount = parseQueryParam(req, res, "amount", "int", Number.POSITIVE_INFINITY);
     const issues = parseQueryParam(req, res, "issues", "json");
     if (amount === undefined || issues === undefined) {
         return;
     }
 
-    console.log("LIST PARTIES");
+    console.log("LIST POLITICIANS");
     res.json([]);
 }
 
-function partyMetric(req, res) {
-    const partyId = req.params.party;
+function politicianMetric(req, res) {
+    const politicianId = req.params.politician;
     const metric = req.params.metric;
 
-    console.log(`PARTY METRIC ${partyId} ${metric}`);
+    console.log(`POL METRIC ${politicianId} ${metric}`);
     res.json({value: -1});
 }
 
-routes.parties = {
-    listParties,
-    partyMetric,
+routes.politicians = {
+    listPoliticians,
+    politicianMetric,
 };
