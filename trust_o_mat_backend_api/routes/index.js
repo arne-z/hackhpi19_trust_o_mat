@@ -1,3 +1,4 @@
 const routes = module.exports = {};
 
-require("./parties.js");
+require("./issues");
+require("./parties");

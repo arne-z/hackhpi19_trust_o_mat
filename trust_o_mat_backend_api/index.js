@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+app.get("/issues", routes.issues.listIssues);
 app.get('/parties', routes.parties.listParties);
 app.get('/parties/:party/metric/:metric', routes.parties.partyMetric);
 
