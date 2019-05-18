@@ -81,4 +81,4 @@ JSON list of stances
 
 #### Votes
 
-Exactly like stances, but the routes begin with `/votes'
+Exactly like [stances](#Stances), but the routes begin with `/votes'
