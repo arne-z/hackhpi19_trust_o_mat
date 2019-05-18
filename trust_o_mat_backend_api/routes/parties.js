@@ -1,16 +1,11 @@
 const routes = require(".");
+const {parseQueryParam} = require('./utilities');
 
 function listParties(req, res) {
-    let amount = Number.POSITIVE_INFINITY;
-    const queryAmount = req.query.amount;
-    if (queryAmount != null) {
-        const amount = parseInt(queryAmount);
-    }
-
-    let issues = null;
-    const queryIssues = req.query.issues;
-    if (queryIssues != null) {
-        issues = JSON.parse(req.query.issues);
+    const amount = parseQueryParam(req, res, "amount", "int", Number.POSITIVE_INFINITY);
+    const issues = parseQueryParam(req, res, "issues", "json");
+    if (amount === undefined || issues === undefined) {
+        return;
     }
 
     console.log("LIST PARTIES");
