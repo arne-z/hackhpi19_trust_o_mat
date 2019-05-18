@@ -14,15 +14,7 @@ function getIssues(amount = 5) {
 function getParties(oppinion) {
     const issues = []
     for (const key in oppinion) {
-        var temp = undefined;
-        if (oppinion[key] === undefined) {
-            temp = 0;
-        } else if (oppinion[key] === true) {
-            temp = 1;
-        } else {
-            temp = 1;
-        }
-        issues.push({ issueId: key, opinion: temp })
+        issues.push({ issueId: key, opinion: oppinion[key] ? 1 : -1 })
     }
     console.log(issues);
     return api.get('/parties', { issues: issues })
