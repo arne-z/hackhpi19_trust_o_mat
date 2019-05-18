@@ -7,11 +7,11 @@ const argv = require("yargs").argv;
 
 const app = express();
 const port = argv.port;
-const dbIp = argv.dbip;
+const dbAddress = argv.dbAddress;
 
 console.log("Starting Trust-O-Mat backend...");
 
-const db = new Mongo(`mongodb://${dbIp}:27017`);
+const db = new Mongo(`${dbAddress}`);
 db.init().then(() => {
     console.log("Initialized Deutsche Bahn!");
 
