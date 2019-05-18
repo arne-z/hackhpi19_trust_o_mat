@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/arne-z/hackhpi19_trust_o_mat/issues"
   },
-  "homepage": "https://github.com/arne-z/hackhpi19_trust_o_mat#readme"
+  "homepage": "https://github.com/arne-z/hackhpi19_trust_o_mat#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
 }
