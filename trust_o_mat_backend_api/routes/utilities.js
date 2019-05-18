@@ -12,6 +12,9 @@ function parseQueryParam(req, res, paramName, type, defaultVal = null) {
                 case "json":
                     paramVal = JSON.parse(queryVal);
                     break;
+                case "string":
+                    paramVal = queryVal;
+                    break;
                 default:
                     res.status(500).json({message: `No parsing function for type '${type}'. Complain to Leo.`})
             }
