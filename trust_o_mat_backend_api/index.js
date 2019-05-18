@@ -2,6 +2,7 @@ const routes = require("./routes");
 const Mongo = require("./db");
 const express = require("express");
 const morgan = require("morgan");
+const cors = require('cors');
 const app = express();
 const port = 3001;
 
@@ -11,6 +12,7 @@ const db = new Mongo("mongodb://172.16.49.43:27017");
 db.init().then(() => {
     console.log("Initialized Deutsche Bahn!");
 
+    app.use(cors());
     app.use(morgan("short"));
 
     app.get("/issues", routes.issues.listIssues.bind(undefined, db));
