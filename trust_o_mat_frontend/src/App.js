@@ -5,6 +5,8 @@ import { Route, Switch, Router } from 'react-router';
 import { createBrowserHistory } from 'history';
 import Profile from './components/Profile';
 import Footer from "./components/Footer";
+import Party from "./components/Party";
+import PartyList from "./components/PartyList";
 import './App.scss';
 
 function App() {

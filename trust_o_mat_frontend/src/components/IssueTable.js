@@ -11,7 +11,7 @@ function IssueTable(props) {
 const tableRows = issues.map(function(issue) {
   const allStancesToIssue = getStances(politician, issue);
   var tableRow = allStancesToIssue.map(function(stance) {
-    if (timestamps.contains(stance[endDate])) {
+    if (timestamps.contains(stance.endDate)) {
       return <td>x</td>
     } else {
       return <td></td>
@@ -27,7 +27,7 @@ const tableRows = issues.map(function(issue) {
 
     return (
         <div className="IssueTable">
-        <table class="table table-hover table-dark">
+        <table class="table table-hover table-dark table-responsive">
           <thead>
             <tr>
               <th scope="col">Issues</th>
@@ -47,8 +47,8 @@ function getAllTimeStamps(issues, politician) {
   for (issue in issue) {
     var stances = getStances(politician, issue);
     for (stance in stances) {
-      set.add(stance[startDate]);
-      set.add(stance[endtDate]);
+      set.add(stance.startDate);
+      set.add(stance.endtDate);
     }
   }
   console.Log(Array.from(set).sort());

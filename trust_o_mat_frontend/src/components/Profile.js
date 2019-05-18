@@ -21,11 +21,12 @@ class Profile extends React.Component {
     }
 
     render() {
-       const { params } = this.props.match
+       const { params } = this.props.match;
+       const issues = getIssues();
         return (
             <div className="Profile">
               <ProfileHeader/>
-              <IssueTable issues={() =>getIssues()} politician={params.id}/>
+              <IssueTable issues={issues} politician={params.id}/>
             </div>
         );
     }
