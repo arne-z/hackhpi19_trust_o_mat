@@ -7,7 +7,7 @@ const schema = {
         bsonType: "string"
       },
       logo: {
-        bsonType: "binData"
+        bsonType: "string"
       }
     }
   }

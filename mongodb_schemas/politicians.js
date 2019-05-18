@@ -7,7 +7,7 @@ const schema = {
         bsonType: "string"
       },
       image: {
-        bsonType: "binData"
+        bsonType: "string"
       },
       address: {
         bsonType: "string"
