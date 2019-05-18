@@ -1,9 +1,13 @@
 const routes = require("./routes");
+const Mongo = require('./db');
 const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get("/issues", routes.issues.listIssues);
+const db = new Mongo("mongodb://172.16.49.43:27017");
+db.init().then(() => console.log("Deutsche Bahn initialized"));
+
+app.get("/issues", routes.issues.listIssues.bind(undefined, db));
 app.get('/parties', routes.parties.listParties);
 app.get('/parties/:party/metric/:metric', routes.parties.partyMetric);
 app.get('/politicians', routes.politicians.listPoliticians);
