@@ -5,12 +5,15 @@ import './Question.scss';
 function Question(props) {
     const { text } = props;
     return (
-        <div className="Question container-fluid d-flex justify-content-left">
-        <Buttons className="Question__button"/>
-            <p>
-                {text}
-            </p>
+        <div className="Question container-fluid row">
+        <div className="col-3"> 
+            <Buttons/> 
         </div>
+        <div className="col-9"> 
+            <p>{text}</p>
+        </div>
+            <hr/>
+        </div> 
     )
 }
 
