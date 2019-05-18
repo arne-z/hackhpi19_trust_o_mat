@@ -13,6 +13,8 @@ function App() {
       <Router history={createBrowserHistory()}>
         <Header />
         <Switch>
+          <Route path="/parties/:id" component={Party} />
+          <Route path="/parties" component={PartyList} />
           <Route path="/profile/:id" component={Profile} />
           <Route path="/" component={LandingPage} />
         </Switch>
