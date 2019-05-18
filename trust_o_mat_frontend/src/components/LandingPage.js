@@ -21,7 +21,7 @@ class LandingPage extends React.Component {
         return (
             <div className="LandingPage">
                 <div className="LandingPage__search">
-                    <h3>What issues are important to you?</h3>
+                    <h2>What issues are important to you?</h2>
                     <input className="form-control" type="text" placeholder="Search" />
                 </div>
                 <Question text="Es sollen EU-weite verbindliche Bürgerentscheide eingeführt werden." />
