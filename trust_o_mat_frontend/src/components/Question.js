@@ -6,11 +6,9 @@ import './Question.scss';
 function Question(props) {
     const {text} = props;
     return (
-        <div className="Question container-fluid d-flex justify-content-center">
+        <div className="Question container-fluid ">
             <p>{text}</p>
-            <div>
-                <Buttons/>
-            </div>
+            <Buttons/>
         </div>
     )
 }
