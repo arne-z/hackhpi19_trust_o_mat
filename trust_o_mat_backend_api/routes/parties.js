@@ -12,6 +12,15 @@ function listParties(req, res) {
     res.json([]);
 }
 
+function partyMetric(req, res) {
+    const partyId = req.params.party;
+    const metric = req.params.metric;
+
+    console.log(`METRIC ${partyId} ${metric}`);
+    res.json({value: -1});
+}
+
 routes.parties = {
     listParties,
+    partyMetric,
 };

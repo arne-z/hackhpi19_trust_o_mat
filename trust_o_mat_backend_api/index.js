@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 
 app.get('/parties', routes.parties.listParties);
+app.get('/parties/:party/metric/:metric', routes.parties.partyMetric);
 
 app.use((req, res) => res.status(404).json({message: "404: you done fucked up"}));
 
