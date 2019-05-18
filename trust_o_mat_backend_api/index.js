@@ -20,4 +20,4 @@ app.get('/votes', routes.votes.listVotes.bind(undefined, db));
 
 app.use((req, res) => res.status(404).json({message: "404: you done fucked up"}));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Trust-O-Mat backend listening on port ${port}!`));

@@ -8,7 +8,6 @@ function listVotes(db, req, res) {
         return;
     }
 
-    console.log("LIST VOTES");
     res.json([]);
 }
 

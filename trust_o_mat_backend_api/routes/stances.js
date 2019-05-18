@@ -8,7 +8,6 @@ function listStances(db, req, res) {
         return;
     }
 
-    console.log("LIST STANCES");
     res.json([]);
 }
 

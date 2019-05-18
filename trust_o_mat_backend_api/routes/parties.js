@@ -8,7 +8,6 @@ function listParties(db, req, res) {
         return;
     }
 
-    console.log("LIST PARTIES");
     res.json([]);
 }
 
@@ -16,7 +15,6 @@ function partyMetric(db, req, res) {
     const partyId = req.params.party;
     const metric = req.params.metric;
 
-    console.log(`PARTY METRIC ${partyId} ${metric}`);
     res.json({value: -1});
 }
 

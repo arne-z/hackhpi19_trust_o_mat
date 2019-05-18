@@ -8,7 +8,6 @@ function listPoliticians(db, req, res) {
         return;
     }
 
-    console.log("LIST POLITICIANS");
     res.json([]);
 }
 
@@ -16,7 +15,6 @@ function politicianMetric(db, req, res) {
     const politicianId = req.params.politician;
     const metric = req.params.metric;
 
-    console.log(`POL METRIC ${politicianId} ${metric}`);
     res.json({value: -1});
 }
 
