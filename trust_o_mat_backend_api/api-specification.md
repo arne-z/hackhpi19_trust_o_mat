@@ -56,7 +56,7 @@ JSON with metric value, eg. `{"value": 84}`
 
 #### Politicians
 
-Exactly like [parties](Parties), but the routes begin with `/politicians`
+Exactly like [parties](#Parties), but the routes begin with `/politicians`
 
 ---
 
