@@ -9,7 +9,7 @@ function listParties(req, res) {
     }
 
     console.log("LIST PARTIES");
-    res.json({});
+    res.json([]);
 }
 
 routes.parties = {
