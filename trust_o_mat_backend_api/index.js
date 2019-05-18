@@ -1,8 +1,9 @@
+const routes = require("./routes");
 const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/parties', routes.parties.listParties);
 
 app.use((req, res) => res.status(404).json({message: "404: you done fucked up"}));
 
