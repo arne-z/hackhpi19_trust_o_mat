@@ -1,17 +1,14 @@
 import React from "react";
-import icons from 'glyphicons'
+import { CheckCircle, Cancel } from '@material-ui/icons';
 import "./Buttons.scss"
 
-function Buttons() {
-    return (<div className= "row">
-        <div class="col">
-            {icons.heart}
+function Buttons(props) {
+    return (
+        <div className="Buttons btn-group" role="group">
+            <button type="button" className="btn btn-secondary"><CheckCircle /></button>
+            <button type="button" className="btn btn-secondary"><Cancel /></button>
         </div>
-        <div class="col">
-            {icons.ok}
-        </div>
-    </div>
-           );
+    );
 }
 
 export default Buttons;
