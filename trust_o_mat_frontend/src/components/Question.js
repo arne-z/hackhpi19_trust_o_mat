@@ -9,7 +9,8 @@ function Question(props) {
         <div className="Question container-fluid ">
             <p>{text}</p>
             <Buttons/>
-        </div>
+            <hr/>
+        </div> 
     )
 }
 
