@@ -44,7 +44,7 @@ const tableRows = issues.map(function(issue) {
 
 function getAllTimeStamps(issues, politician) {
   var set = new Set();
-  for (issue in issue) {
+  for (issue in issues) {
     var stances = getStances(politician, issue);
     for (stance in stances) {
       set.add(stance.startDate);
