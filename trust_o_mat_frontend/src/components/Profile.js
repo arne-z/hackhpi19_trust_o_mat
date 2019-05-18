@@ -1,6 +1,8 @@
 import React from 'react'
 import ProfileHeader from './ProfileHeader.js'
 import './Profile.scss'
+import IssueTable from './IssueTable.js'
+import {getIssues} from '../RequestController';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -18,9 +20,11 @@ class Profile extends React.Component {
     }
 
     render() {
+       const { params } = this.props.match
         return (
             <div className="Profile">
               <ProfileHeader/>
+              <IssueTable issues={() =>getIssues()} politician={params.id}/>
             </div>
         );
     }
