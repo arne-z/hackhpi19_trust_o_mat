@@ -22,14 +22,18 @@ class Mongo {
         { limit: limit })
       .toArray();
   };
-  async politicians() {
+  async politicians(limit = 0) {
     return await this.collections["politicians"]
-      .find({})
+      .find(
+        {},
+        { limit: limit })
       .toArray();
   };
-  async parties() {
+  async parties(limit = 0) {
     return await this.collections["parties"]
-      .find({})
+      .find(
+        {},
+        { limit: limit })
       .toArray();
   };
   async getStances(source, issue) {
