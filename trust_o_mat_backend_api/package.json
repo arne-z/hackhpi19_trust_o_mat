@@ -1,0 +1,23 @@
+{
+  "name": "trust_o_mat_backend_api",
+  "version": "1.0.0",
+  "description": "trust-o-mat backend-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arne-z/hackhpi19_trust_o_mat.git"
+  },
+  "keywords": [
+    "trust-o-mat",
+    "hackhpi"
+  ],
+  "author": "Leonard Geier, Lukas Wagner, Joana Bergsiek, Arne Zerndt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arne-z/hackhpi19_trust_o_mat/issues"
+  },
+  "homepage": "https://github.com/arne-z/hackhpi19_trust_o_mat#readme"
+}
