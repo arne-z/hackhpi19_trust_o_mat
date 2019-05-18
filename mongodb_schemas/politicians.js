@@ -13,7 +13,7 @@ const schema = {
         bsonType: "string"
       },
       phone: {
-        bsonType: "int"
+        bsonType: "string"
       },
       party: {
         bsonType: "objectId",
