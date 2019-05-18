@@ -6,6 +6,7 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
 
+
         this.state = {
             value: '',
         };
@@ -18,9 +19,11 @@ class Profile extends React.Component {
     }
 
     render() {
+        const { params } = this.props.match
         return (
             <div className="Profile">
-              <ProfileHeader/>
+                <p> ID: {params.id}</p>
+                <ProfileHeader />
             </div>
         );
     }
