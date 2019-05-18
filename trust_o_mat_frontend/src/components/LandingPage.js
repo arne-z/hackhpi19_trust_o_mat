@@ -1,14 +1,17 @@
 import React from 'react'
 import './LandingPage.scss'
 import Question from './Question'
+import { getIssues, getParties } from '../RequestController'
+
 
 class LandingPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {};
-
+        this.issues = getIssues();
         this.onChange = this.onChange.bind(this);
+        console.log(this.issues);
     }
 
     onChange(event) {
@@ -30,6 +33,7 @@ class LandingPage extends React.Component {
                 <Question text="Die EU soll sich höhere Ziele zur Reduzierung des CO2-Ausstoßes setzen." state={this.state.co2ziele} handleAnswer={answer => this.handleQuestionClick("co2ziele", answer)} />
                 <Question text="Die EU-Mitgliedsstaaten sollen eine gemeinsame Armee aufbauen." state={this.state.armee} handleAnswer={answer => this.handleQuestionClick("armee", answer)} />
                 <Question text="Die Europäische Union soll vorrangig Bio-Landwirtschaft fördern." state={this.state.bioLandwirtschaft} handleAnswer={answer => this.handleQuestionClick("bioLandwirtschaft", answer)} />
+                <input type="submit" className="btn btn-secondary btn-submit" onClick={() => getParties(this.state)} />
             </div>
         );
     }

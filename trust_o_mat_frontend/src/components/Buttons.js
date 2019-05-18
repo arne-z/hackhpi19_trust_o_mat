@@ -6,9 +6,9 @@ function getButtonColor(state) {
     if (state === undefined) {
         return { first: 'none', second: 'none' }
     } else if (state === false) {
-        return { first: 'none', second: '2px solid red' }
+        return { first: 'none', second: '3px solid red' }
     } else {
-        return { first: '2px solid blue', second: 'none' }
+        return { first: '3px solid blue', second: 'none' }
     }
 }
 
