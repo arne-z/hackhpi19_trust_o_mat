@@ -1,4 +1,5 @@
 // Returns true if successful, undefined if not
+// This function also sends error messages don't @ me
 function parseQueryParam(req, res, paramName, type, defaultVal = null) {
     try {
         let paramVal = defaultVal;
