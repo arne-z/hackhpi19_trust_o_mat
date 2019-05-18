@@ -1,7 +1,7 @@
 const routes = require(".");
 const {parseQueryParam} = require('./utilities');
 
-function listParties(req, res) {
+function listParties(db, req, res) {
     const amount = parseQueryParam(req, res, "amount", "int", Number.POSITIVE_INFINITY);
     const issues = parseQueryParam(req, res, "issues", "json");
     if (amount === undefined || issues === undefined) {
@@ -12,7 +12,7 @@ function listParties(req, res) {
     res.json([]);
 }
 
-function partyMetric(req, res) {
+function partyMetric(db, req, res) {
     const partyId = req.params.party;
     const metric = req.params.metric;
 
