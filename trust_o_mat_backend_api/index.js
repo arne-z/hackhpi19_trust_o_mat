@@ -2,13 +2,16 @@ const routes = require("./routes");
 const Mongo = require("./db");
 const express = require("express");
 const morgan = require("morgan");
-const cors = require('cors');
+const cors = require("cors");
+const argv = require("yargs").argv;
+
 const app = express();
-const port = 3001;
+const port = argv.port;
+const dbAddress = argv.dbAddress;
 
 console.log("Starting Trust-O-Mat backend...");
 
-const db = new Mongo("mongodb://172.16.49.43:27017");
+const db = new Mongo(`${dbAddress}`);
 db.init().then(() => {
     console.log("Initialized Deutsche Bahn!");
 
