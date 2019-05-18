@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
+import Question from './components/Question'
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <LandingPage />
+      <Question />
     </div>
   );
 }
