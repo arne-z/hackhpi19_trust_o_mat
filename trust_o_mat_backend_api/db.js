@@ -21,17 +21,33 @@ class Mongo {
         {},
         { limit: limit })
       .toArray();
-  }
+  };
+  async politicians() {
+    return await this.collections["politicians"]
+      .find({})
+      .toArray();
+  };
+  async parties() {
+    return await this.collections["parties"]
+      .find({})
+      .toArray();
+  };
+  async getStances(source, issue) {
+    return await this.collections["stances"]
+      .find({ source, issue })
+      .toArray();
+  };
+  async getVotes(source, issue) {
+    return await this.collections["votes"]
+      .find({ source, issue })
+      .toArray();
+  };
+  async getStancesAndVotes(source, issue) {
+    return {
+      stances: getStances(source, issue),
+      votes: getVotes(source, issue)
+    }
+  };
 }
-
-async function test() {
-  const db = new Mongo();
-  await db.init();
-  (await db.issues()).forEach((issue) => {
-    console.log(issue.name);
-  })
-}
-
-test();
 
 module.exports = Mongo;
