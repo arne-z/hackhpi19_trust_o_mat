@@ -1,0 +1,9 @@
+{
+    "name": "mongodb_schema",
+    "version": "1.0.0",
+    "author": "Leonard Geier, Lukas Wagner, Joana Bergsiek, Arne Zerndt",
+    "license": "ISC",
+    "dependencies": {
+        "mongodb": "^3.2.5"
+    }
+}
