@@ -38,6 +38,8 @@ JSON list of parties
 ##### Get metric for party
 `GET /parties/{party-id}/metrics/{metric}`
 
+metric must be one of: `uniformity`, `flip-floppiness`
+
 ###### Returns
 JSON with metric value, eg. `{"value": 84}`
 
@@ -57,6 +59,8 @@ JSON with metric value, eg. `{"value": 84}`
 #### Politicians
 
 Exactly like [parties](#Parties), but the routes begin with `/politicians`
+
+Metric must be one of `uniformity`, `party-adherence`
 
 ---
 
