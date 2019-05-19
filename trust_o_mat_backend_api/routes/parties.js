@@ -47,15 +47,20 @@ function partyMetric(db, req, res) {
     const partyId = req.params.party;
     const metric = req.params.metric;
 
+    let metricFunction;
     switch (metric) {
         case "flip-floppiness":
-            metrics.flipFlopiness(partyId)
-                .then(value => res.json({value}));
+            metricFunction = metrics.flipFlopiness;
+            break;
+        case "uniformity":
+            metricFunction = metrics.uniformity;
             break;
         default:
             res.status(404).json({message: `No metric '${metric}'' for parties`});
-
+            return;
     }
+
+    metricFunction(partyId).then(value => res.json({value}));
 }
 
 routes.parties = {
