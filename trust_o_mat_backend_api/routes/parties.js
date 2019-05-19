@@ -56,7 +56,7 @@ function partyMetric(db, req, res) {
             metricFunction = metrics.uniformity;
             break;
         default:
-            res.status(404).json({message: `No metric '${metric}'' for parties`});
+            res.status(404).json({message: `No metric '${metric}' for parties`});
             return;
     }
 
