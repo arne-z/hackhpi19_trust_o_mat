@@ -41,7 +41,7 @@ JSON list of parties
 metric must be one of: `uniformity`, `flip-floppiness`
 
 ###### Returns
-JSON with metric value, eg. `{"value": 84}`
+JSON with metric value, eg. `{"value": 0.34}`. `value` lies between 0 and 1. 
 
 ###### Parameters
 - amount: number

@@ -1,13 +1,13 @@
 async function flipFlopiness(partyOrPoliticianId) {
-    return -100;
+    return -1;
 }
 
 async function uniformity(partyId) {
-    return -23;
+    return -1;
 }
 
 async function partyAdherence(politicianId) {
-    return -212;
+    return -1;
 }
 
 module.exports = {
