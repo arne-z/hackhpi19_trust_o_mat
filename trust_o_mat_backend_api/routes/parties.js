@@ -1,5 +1,6 @@
 const routes = require(".");
 const {parseQueryParam} = require('./utilities');
+const metrics = require('./metrics');
 
 function listParties(db, req, res) {
     const amount = parseQueryParam(req, res, "amount", "int", 0);
@@ -46,7 +47,15 @@ function partyMetric(db, req, res) {
     const partyId = req.params.party;
     const metric = req.params.metric;
 
-    res.json({value: -1});
+    switch (metric) {
+        case "flip-floppiness":
+            metrics.flipFlopiness(partyId)
+                .then(value => res.json({value}));
+            break;
+        default:
+            res.status(404).json({message: `No metric '${metric}'' for parties`});
+
+    }
 }
 
 routes.parties = {

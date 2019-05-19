@@ -20,9 +20,9 @@ db.init().then(() => {
 
     app.get("/issues", routes.issues.listIssues.bind(undefined, db));
     app.get("/parties", routes.parties.listParties.bind(undefined, db));
-    app.get("/parties/:party/metric/:metric", routes.parties.partyMetric.bind(undefined, db));
+    app.get("/parties/:party/metrics/:metric", routes.parties.partyMetric.bind(undefined, db));
     app.get("/politicians", routes.politicians.listPoliticians.bind(undefined, db));
-    app.get("/politicians/:politician/metric/:metric", routes.politicians.politicianMetric.bind(undefined, db));
+    app.get("/politicians/:politician/metrics/:metric", routes.politicians.politicianMetric.bind(undefined, db));
     app.get("/stances", routes.stances.listStances.bind(undefined, db));
     app.get("/votes", routes.votes.listVotes.bind(undefined, db));
 
