@@ -31,6 +31,13 @@ class Mongo {
         { limit: limit })
       .toArray();
   };
+  async politiciansOfParty(party) {
+    return await this.collections["politicians"]
+        .find(
+            {},
+            { party: new ObjectId(party) })
+        .toArray();
+  };
   async parties(limit = 0) {
     return await this.collections["parties"]
       .find(

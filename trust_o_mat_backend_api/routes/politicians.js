@@ -29,7 +29,7 @@ function politicianMetric(db, req, res) {
             return;
     }
 
-    metricFunction(politicianId).then(value => res.json({value}));
+    metricFunction(politicianId, db).then(value => res.json({value}));
 }
 
 routes.politicians = {

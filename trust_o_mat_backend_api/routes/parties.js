@@ -60,7 +60,7 @@ function partyMetric(db, req, res) {
             return;
     }
 
-    metricFunction(partyId).then(value => res.json({value}));
+    metricFunction(partyId, db).then(value => res.json({value}));
 }
 
 routes.parties = {
