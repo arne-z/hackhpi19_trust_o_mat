@@ -1,4 +1,6 @@
-const MongoClient = require('mongodb').MongoClient;
+const mongodb = require('mongodb');
+const MongoClient = mongodb.MongoClient;
+const ObjectId = mongodb.ObjectId;
 
 class Mongo {
   constructor(url = 'mongodb://localhost:27017', dbName = 'trust-o-mat') {
@@ -38,18 +40,18 @@ class Mongo {
   };
   async getStances(source, issue) {
     return await this.collections["stances"]
-      .find({ source, issue })
+      .find({ source: new ObjectId(source), issue: new ObjectId(issue) })
       .toArray();
   };
   async getVotes(source, issue) {
     return await this.collections["votes"]
-      .find({ source, issue })
+    .find({ source: new ObjectId(source), issue: new ObjectId(issue) })
       .toArray();
   };
   async getStancesAndVotes(source, issue) {
     return {
-      stances: getStances(source, issue),
-      votes: getVotes(source, issue)
+      stances: await this.getStances(source, issue),
+      votes: await this.getVotes(source, issue)
     }
   };
 }
