@@ -1,1 +1,0 @@
-{"_id":{"$oid":"5ce0f7655fb2ad3fc88ed51d"},"issue":{"$oid":"5ce06adc5fb2ad3fc88ed50e"},"source":{"$oid":"5ce0879f5fb2ad3fc88ed51c"},"sourceIsParty":false,"opinion":1,"startDate":{"$date":"2015-10-02T22:00:00.000Z"},"endDate":{"$date":"2016-02-19T23:00:00.000Z"}}

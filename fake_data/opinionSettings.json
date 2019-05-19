@@ -1,0 +1,27 @@
+{
+    "parties": [
+        {
+            "id" : "5ce06e8d5fb2ad3fc88ed513",
+            "flipfloppyness": 5,
+            "politicians": [
+                {
+                    "id": "5ce0879f5fb2ad3fc88ed51c",
+                    "removeSwitches": 2,
+                    "addSwitches": 2
+                },
+                {
+                    "id": "5ce08afb95c9de3fc8c4680f",
+                    "removeSwitches": 3,
+                    "addSwitches": 2
+                }
+            ]
+        }
+    ],
+    "issues": [
+        "5ce06adc5fb2ad3fc88ed50e",
+        "5ce06ae95fb2ad3fc88ed50f",
+        "5ce06af95fb2ad3fc88ed510",
+        "5ce06b0b5fb2ad3fc88ed511",
+        "5ce06b165fb2ad3fc88ed512"
+    ]
+}
