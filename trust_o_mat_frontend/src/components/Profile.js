@@ -2,7 +2,7 @@ import React from 'react'
 import ProfileHeader from './ProfileHeader.js'
 import './Profile.scss'
 import IssueTable from './IssueTable.js'
-import {getIssues, getStances} from '../RequestController';
+import RequestController from '../RequestController';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -10,16 +10,7 @@ class Profile extends React.Component {
 
 
         this.state = {};
-        getIssues().then((issues) => {
-          const stancePromises = [];
-          for (const issue of issues.data) {
-            stancePromises.push(getStances(issue, props.match.id));
-          }
-          Promise.all(stancePromises).then((stances) => {
-            var stanceData = stances.map((stance) => stance.data);
-            this.setState( { issues : issues.data, stances: stanceData} );
-          });
-        });
+        this.state.IssueTable = null;
 
         this.onChange = this.onChange.bind(this);
     }
@@ -28,13 +19,15 @@ class Profile extends React.Component {
         this.setState({ value: event.target.value });
     }
 
+    getIssuetable() {
+        return (<IssueTable issues={this.state.issues} stances={this.state.stances} politician={this.props.match.params.id} />);
+    }
+
     render() {
-       const { params } = this.props.match;
-       if (!this.state.issues) return null;
         return (
             <div className="Profile">
-              <ProfileHeader/>
-              <IssueTable issues={this.state.issues} stances={this.state.stances} politician={params.id}/>
+                <ProfileHeader />
+                {this.state.IssueTable}
             </div>
         );
     }

@@ -1,7 +1,8 @@
 import React from 'react'
 import './LandingPage.scss'
 import Question from './Question'
-import { getIssues, getParties } from '../RequestController'
+import { Link } from "react-router-dom";
+import RequestController from '../RequestController'
 
 
 class LandingPage extends React.Component {
@@ -9,7 +10,7 @@ class LandingPage extends React.Component {
         super(props);
 
         this.state = {};
-        this.issues = getIssues();
+        this.issues = RequestController.getIssues();
         this.onChange = this.onChange.bind(this);
         console.log(this.issues);
     }
@@ -33,7 +34,8 @@ class LandingPage extends React.Component {
                 <Question text="Die EU soll sich höhere Ziele zur Reduzierung des CO2-Ausstoßes setzen." state={this.state.co2ziele} handleAnswer={answer => this.handleQuestionClick("co2ziele", answer)} />
                 <Question text="Die EU-Mitgliedsstaaten sollen eine gemeinsame Armee aufbauen." state={this.state.armee} handleAnswer={answer => this.handleQuestionClick("armee", answer)} />
                 <Question text="Die Europäische Union soll vorrangig Bio-Landwirtschaft fördern." state={this.state.bioLandwirtschaft} handleAnswer={answer => this.handleQuestionClick("bioLandwirtschaft", answer)} />
-                <input type="submit" className="btn btn-secondary btn-submit" onClick={() => getParties(this.state)} />
+                <Link to={`/parties`} className="btn btn-secondary btn-submit" onClick={() => RequestController.getParties(this.state)} > Submit </Link>
+
             </div>
         );
     }
