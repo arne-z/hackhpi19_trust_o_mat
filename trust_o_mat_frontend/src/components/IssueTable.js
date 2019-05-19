@@ -3,14 +3,18 @@ import "./IssueTable.scss";
 import {getStances} from '../RequestController';
 
 function IssueTable(props) {
-  const {issues, politician} = props;
-  const timestamps = getAllTimeStamps(issues, politician);
+  const {issues, stances, politician} = props;
+  console.log("issues", issues);
+  console.log("stances", stances);
+  console.log("politician", politician);
+  const timestamps = getAllTimeStamps(issues, stances, politician);
   const tableHeader = timestamps.map(function(timestamp){
                         return <th>{timestamp}</th>;
                       });
+console.log(issues);
 const tableRows = issues.map(function(issue) {
-  const allStancesToIssue = getStances(politician, issue);
-  var tableRow = allStancesToIssue.map(function(stance) {
+  var tableRow = stances.map(function(stance) {
+    console.log(timestamps);
     if (timestamps.contains(stance.endDate)) {
       return <td>x</td>
     } else {
@@ -42,16 +46,13 @@ const tableRows = issues.map(function(issue) {
     )
 }
 
-function getAllTimeStamps(issues, politician) {
+function getAllTimeStamps(issues, stances, politician) {
   var set = new Set();
-  for (issue in issues) {
-    var stances = getStances(politician, issue);
-    for (stance in stances) {
-      set.add(stance.startDate);
-      set.add(stance.endtDate);
-    }
+  for (var stance in stances) {
+    set.add(stance.startDate);
+    set.add(stance.endtDate);
   }
-  console.Log(Array.from(set).sort());
+  console.log(set);
   return Array.from(set).sort();
 }
 
