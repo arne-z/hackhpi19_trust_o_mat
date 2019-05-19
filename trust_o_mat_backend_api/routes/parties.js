@@ -8,9 +8,38 @@ function listParties(db, req, res) {
         return;
     }
 
-    db.parties(amount).then((parties) => {
-        res.json(parties);
-    });
+    if (issues === null) {
+        db.parties(amount).then((parties) => {
+            res.json(parties);
+        });
+    } else {
+        partiesByIssues(issues, amount)((parties) => {
+            res.json(parties);
+        });
+    }
+
+}
+
+async function partiesByIssues(issues, amount) {
+    const parties = await db.parties();
+    const partyFitnessRatings = new Map();
+    for (const party of parties) {
+        let partyFitness = 0;
+        for (const {issueId, opinion: userOpinion} of issues) {
+            const stances = await db.getStances(party._id, issueId);
+            for (const {opinion: partyOpinion} of stances) {
+                partyFitness += Math.abs(partyOpinion - userOpinion);
+            }
+        }
+        partyFitnessRatings.set(party, partyFitness);
+    }
+
+    const resultParties = Array.from(partyFitnessRatings)
+        .sort(([, fitnessA], [, fitnessB]) => fitnessA - fitnessB);
+    if (amount > 0) {
+        resultParties.slice(0, amount)
+    }
+    return resultParties.map(([party,]) => party);
 }
 
 function partyMetric(db, req, res) {
