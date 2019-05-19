@@ -1,5 +1,5 @@
 const routes = require(".");
-const {parseQueryParam} = require('./utilities');
+const { parseQueryParam } = require('./utilities');
 
 function listStances(db, req, res) {
     const politician = parseQueryParam(req, res, "politician", "string");
@@ -8,8 +8,8 @@ function listStances(db, req, res) {
         return;
     }
 
-    db.getStances(politician, issue)
-        .then(result => res.json(result));
+    res.json([{ issue: 'sifdgiosdfbpi', source: 'oisidnugpa', sourceIsParty: false, opinion: 1, startDate: '0101290488203', endDate: '0101290488203' }, { issue: 'sifdgiosdfbpi', source: 'oisidnugpa', sourceIsParty: false, opinion: 1, startDate: '0101290488203', endDate: '0101290488203' }, { issue: 'sifdgiosdfbpi', source: 'oisidnugpa', sourceIsParty: false, opinion: 1, startDate: '0101290488203', endDate: '0101290488203' }]);
+
 }
 
 routes.stances = {

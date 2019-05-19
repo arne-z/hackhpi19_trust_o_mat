@@ -1,30 +1,25 @@
 import React from "react";
 import "./IssueTable.scss";
-import {getStances} from '../RequestController';
 
 function IssueTable(props) {
-  const {issues, stances, politician} = props;
-  /**console.log("issues", issues);
-  console.log("stances", stances);
-  console.log("politician", politician);
+  const { issues, stances, politician } = props;
+  if (!stances || !issues) return null;
+
   const timestamps = getAllTimeStamps(issues, stances, politician);
-  const tableHeader = timestamps.map(function(timestamp){
-                        return <th>{timestamp}</th>;
-                      });
-console.log(issues);
-const tableRows = issues.map(function(issue) {
-  var tableRow = stances.map(function(stance) {
-    console.log(timestamps);
-    if (timestamps.contains(stance.endDate)) {
-      return <td>x</td>
-    } else {
-      return <td></td>
-    }
-  })
+  const tableHeader = timestamps.map((timestamp) => (<th>{timestamp}</th>));
+  console.log('Timestamps:: ' + JSON.stringify(timestamps));
+  const tableRows = issues.map(function (issue) {
+    var tableRow = stances.map(function (stance) {
+      if (timestamps.contains(stance.endDate)) {
+        return <td>x</td>
+      } else {
+        return <td></td>
+      }
+    })
     return (
       <tr>
-      <th scope="row">issue</th>
-      {tableRow}
+        <th scope="row">issue</th>
+        {tableRow}
       </tr>
     )
 })*/
@@ -78,11 +73,13 @@ const tableRows = issues.map(function(issue) {
 
 function getAllTimeStamps(issues, stances, politician) {
   var set = new Set();
-  for (var stance in stances) {
+  console.log('Its these: ', stances);
+  stances.forEach((stance) => {
+    console.log('single stance:: ' + JSON.stringify(stance));
     set.add(stance.startDate);
-    set.add(stance.endtDate);
-  }
-  console.log(set);
+    set.add(stance.endDate);
+  })
+  console.log('SET:: ' + JSON.stringify(set));
   return Array.from(set).sort();
 }
 
