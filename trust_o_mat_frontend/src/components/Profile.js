@@ -28,6 +28,9 @@ class Profile extends React.Component {
         this.setState({ value: event.target.value });
     }
 
+    componentDidMount() {
+    }
+
     render() {
        const { params } = this.props.match;
        if (!this.state.issues) return null;
