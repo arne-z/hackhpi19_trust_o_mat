@@ -12,13 +12,13 @@ function ProfileInfo() {
           </div>
           <div className="row">
             <div className="col-4">
-              <ProfileMetrik number="42" name="Uniformity" evaluationText="This is unusual" />
+              <ProfileMetrik number="13" name="Uniformity" evaluationText="This is unusual" />
               </div>
               <div className="col-4">
-                  <ProfileMetrik number="69" name="Flip-Flop" evaluationText="" />
+                  <ProfileMetrik number="80" name="Flip-Flop" evaluationText="" />
               </div>
               <div className="col-4">
-                  <ProfileMetrik number="10" name="Solidarity" evaluationText="This is enraging" />
+                  <ProfileMetrik number="99" name="Solidarity" evaluationText="This is enraging" />
               </div>
             </div>
         </div>

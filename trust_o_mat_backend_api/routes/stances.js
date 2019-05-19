@@ -9,6 +9,7 @@ function listStances(db, req, res) {
     }
 
     res.json([{ issue: 'sifdgiosdfbpi', source: 'oisidnugpa', sourceIsParty: false, opinion: 1, startDate: '0101290488203', endDate: '0101290488203' }, { issue: 'sifdgiosdfbpi', source: 'oisidnugpa', sourceIsParty: false, opinion: 1, startDate: '0101290488203', endDate: '0101290488203' }, { issue: 'sifdgiosdfbpi', source: 'oisidnugpa', sourceIsParty: false, opinion: 1, startDate: '0101290488203', endDate: '0101290488203' }]);
+
 }
 
 routes.stances = {

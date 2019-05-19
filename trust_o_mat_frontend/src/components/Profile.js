@@ -21,7 +21,7 @@ class Profile extends React.Component {
 
     getIssuetable() {
         return (<IssueTable issues={this.state.issues} stances={this.state.stances} politician={this.props.match.params.id} />);
-    }
+
 
     render() {
         return (

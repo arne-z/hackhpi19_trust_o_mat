@@ -8,7 +8,8 @@ function listVotes(db, req, res) {
         return;
     }
 
-    res.json([]);
+    db.getVotes(politician, issue)
+        .then(result => res.json(result));
 }
 
 routes.votes = {
