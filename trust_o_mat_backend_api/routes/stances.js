@@ -8,7 +8,8 @@ function listStances(db, req, res) {
         return;
     }
 
-    res.json([]);
+    db.getStances(politician, issue)
+        .then(result => res.json(result));
 }
 
 routes.stances = {
