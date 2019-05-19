@@ -7,8 +7,8 @@ function ProfileMetrik(props) {
         <div className="ProfileMetrik">
           <div className="text-center">
               <h2> {number}% <br/> </h2>
-              <p> {name} <br/> </p>
-              <p> {evaluationText} </p>
+              <h5> {name} <br/> <br/></h5>
+              <p>{evaluationText} </p>
           </div>
         </div>
     )
